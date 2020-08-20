@@ -7,7 +7,7 @@ name: Update FSA
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 11 * * *'
+    - cron:  '0 10 * * *'
   push:
     branches: [ master ]
 
