@@ -7,7 +7,7 @@ name: Update FSA
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 10 * * *'
+    - cron:  '0 10 * * 0'
   push:
     branches: [ master ]
 
@@ -24,7 +24,10 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: install xml dependencies
-      run: sudo apt-get install xsltproc  
+      run: sudo apt-get install xsltproc
+
+    - name: set up deps
+      run: npm install csv2geojson
 
     # Runs a single command using the runners shell
     - name: build it
